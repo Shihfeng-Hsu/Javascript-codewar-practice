@@ -14,6 +14,16 @@ function cakes(recipe, available) {
   console.log(count.sort()[0]);
   return count.sort()[0];
 }
+
+/**
+ * Other solution   
+function cakes(recipe, available) {
+  return Object.keys(recipe).reduce(function(val, ingredient) {
+    return Math.min(Math.floor(available[ingredient] / recipe[ingredient] || 0), val)
+  }, Infinity)  
+}
+ */
+
 let recipe = { flour: 500, sugar: 200, eggs: 1 };
 let available = { flour: 1200, sugar: 1200, eggs: 5, milk: 200 };
 cakes(recipe, available), // 2);
